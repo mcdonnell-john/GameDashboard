@@ -1,0 +1,9 @@
+<div>
+    <h3>Competitions</h3>
+    <br/>
+    <table class="table table-hover">
+        <tbody ng:repeat="comp in competitionList">
+        <tr><td><a href="/dashboard/#/competition/{{comp.id}}">{{comp.name}}</a></td></tr>
+        </tbody>
+    </table>
+</div>

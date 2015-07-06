@@ -1,0 +1,9 @@
+<div>
+    <h3>Players</h3>
+    <br/>
+    <table class="table table-hover">
+        <tbody ng:repeat="player in playerList">
+            <tr><td><img class="table-logo" ng-src="{{player.imageUrl}}"></td><td><a href="/dashboard/#/player/{{player.id}}">{{player.firstName}} {{player.lastName}} ({{player.nickName}})</a></td></tr>
+        </tbody>
+    </table>
+</div>

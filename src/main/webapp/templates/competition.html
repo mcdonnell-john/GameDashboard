@@ -1,0 +1,83 @@
+<!-- center left-->	
+<div class="col-md-6">
+    <h3>{{competition.name}}</h3>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Players</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tbody ng:repeat="player in competition.players">
+                    <tr>
+                        <td>
+                            <a href="/dashboard/#/player/{{player.id}}">{{player.name}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--/panel-body-->
+    </div><!--/panel-->
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Teams</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tbody ng:repeat="team in competition.teams">
+                    <tr>
+                        <td>
+                            <img src="images/{{team.name}}.gif" alt="{{team.name}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/dashboard/#/team/{{team.id}}">{{team.name}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--/panel-body-->
+    </div><!--/panel-->
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Add Fixture</h4>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="addFixture()" name="frmAddFixture" class="form form-vertical">
+                    <div class="control-group">
+                        <label>Home</label>
+                        <div class="controls">
+                            <select class="form-control" ng-model="fixture.homePlayer" ng-options="player as player.name for player in competition.players" required> </select>
+                            <select class="form-control" ng-model="fixture.homeTeam" ng-options="team as team.name for team in competition.teams" required> </select>
+                            <input type="number" ng-model="fixture.homeScore" class="form-control">
+                        </div>
+                    </div>      
+                    <div class="control-group">
+                        <label>Away</label>
+                        <div class="controls">
+                            <select class="form-control" ng-model="fixture.awayPlayer" ng-options="player as player.name for player in competition.players" required> </select>
+                            <select class="form-control" ng-model="fixture.awayTeam" ng-options="team as team.name for team in competition.teams" required> </select>
+                            <input type="number" ng-model="fixture.awayScore" class="form-control">
+                        </div>
+                    </div>      
+                    <div class="control-group">
+                        <label></label>
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">
+                                Add Fixture
+                            </button>
+                        </div>
+                    </div>   
+                </form>
+            </div><!--/panel content-->
+        </div><!--/panel-->
+
+    </div><!--/col-span-6-->
+</div>

@@ -1,0 +1,9 @@
+<div>
+    <h3>Available Games</h3>
+    <br/>
+    <table class="table table-hover">
+        <tbody ng:repeat="game in gameList">
+            <tr><td><img class="table-logo" ng-src="{{game.boxartUrl}}"></td><td><a href="/dashboard/#/game/{{game.id}}">{{game.name}}</a></td></tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <h3>OVERVIEW</h3>
+    <div ng-repeat="playerData in getPlayerOverviewDataForChart()">
+        <div class="col-lg-6 col-sm-12 ng-scope">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ playerData.playerName}}</div>
+                <div class="panel-body">
+                    <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="playerData.gamesPlayedChartData" labels="playerData.gamesPlayedLabels" legend="true"></canvas>
+                    <canvas id="pie" class="chart chart-pie chart-xs" data="playerData.homeAwayRatioChartData" labels="playerData.homeAwayRatioLabels" legend="true"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

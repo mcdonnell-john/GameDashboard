@@ -1,0 +1,12 @@
+<div>
+    <h3>Team</h3>
+    <br/>
+    <table class="table table-hover">
+        <tbody ng:repeat="team in teamList">
+            <tr>
+                <td><img ng-src="{{team.imageUrl}}" alt="{{team.name}}"></td>
+                <td><a href="/dashboard/#/team/{{team.id}}">{{team.name}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
